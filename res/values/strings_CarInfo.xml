@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="t_CarNo">车牌号</string>
+    <string name="t_Driver">驾驶员</string>
+    <string name="t_GoodsName">货物名称</string>
+    <string name="t_Start"> 起点</string>
+    <string name="t_End">讫点</string>
+    <string name="t_LoadTime">要求车时间</string>
+    <string name="t_ArrTime">要求到达时间</string>
+    <string name="t_ton">调配吨位</string>
+    <string name="e_CarNo"/>
+    <string name="e_Driver"/>
+    <string name="e_GoodsName"/>
+    <string name="e_Start"/>
+    <string name="e_End"/>
+    <string name="e_LoadTime"/>
+    <string name="e_ArrTime"/>
+    <string name="e_ton"/>
+    <string name="Modify">信息修改</string>
+    <string name="SignIn"> 签到</string>
+    <string name="Load">装车</string>
+    
+</resources>

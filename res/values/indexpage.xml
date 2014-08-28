@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="indexPage_back">上一页</string>
+<string name="Spinner_prompt">选择项目部</string>
+</resources>
