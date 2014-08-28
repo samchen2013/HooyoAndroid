@@ -240,6 +240,8 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
 		int IS_PRIMARY = 1;
 	}
 
+	
+	
 	/**
 	 * Use an AsyncTask to fetch the user's email addresses on a background
 	 * thread, and update the email text field with results on the main UI
