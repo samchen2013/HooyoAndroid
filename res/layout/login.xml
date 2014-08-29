@@ -1,27 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:orientation="vertical" android:layout_width="fill_parent"
-	android:layout_height="fill_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/login_bg"
+    android:orientation="vertical" >
 
-	<TextView android:layout_width="wrap_content"
-		android:layout_height="wrap_content" android:text="@string/loginUserNameLabel"
-		android:textSize="18sp"></TextView>
-	<EditText android:text="" android:id="@+id/loginUserNameEdit"
-		android:layout_width="fill_parent" android:layout_height="wrap_content"></EditText>
-	<TextView android:layout_width="wrap_content"
-		android:layout_height="wrap_content" android:text="@string/loginPasswordLabel"
-		android:textSize="18sp"></TextView>
-	<EditText android:id="@+id/loginPasswordEdit"
-		android:password="true" android:nextFocusDown="@+id/loginSubmit"
-		android:nextFocusRight="@+id/loginSubmit" android:layout_width="fill_parent"
-		android:layout_height="wrap_content"></EditText>
-	<CheckBox android:text="@string/loginRememberMe" android:id="@+id/loginRememberMeCheckBox"
-		android:layout_width="wrap_content" android:layout_height="wrap_content"
-		android:layout_marginLeft="20px">
-		</CheckBox>
-		<Button android:text="@string/loginSubmit" android:id="@+id/loginSubmit"
-			android:textSize="24px" android:layout_width="fill_parent"
-			android:layout_height="wrap_content">
-		</Button>
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/login_logo" />
 
-</LinearLayout>
+    <EditText
+        android:id="@+id/loginPasswordEdit"
+        android:layout_width="183dp"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/loginSubmit"
+        android:layout_below="@+id/imageView1"
+        android:layout_marginRight="17dp"
+        android:layout_marginTop="66dp"
+        android:ems="10"
+        android:nextFocusDown="@+id/loginSubmit"
+        android:nextFocusRight="@+id/loginSubmit"
+        android:password="true" />
+
+    <EditText
+        android:id="@+id/loginUserNameEdit"
+        android:layout_width="184dp"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/loginPasswordEdit"
+        android:layout_centerVertical="true"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/loginPasswordEdit"
+        android:layout_alignBottom="@+id/loginPasswordEdit"
+        android:layout_toLeftOf="@+id/loginUserNameEdit"
+        android:text="@string/loginUserNameLabel"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_alignRight="@+id/textView1"
+        android:layout_centerVertical="true"
+        android:text="@string/loginPasswordLabel"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+    <CheckBox
+        android:id="@+id/loginRememberMeCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_below="@+id/loginUserNameEdit"
+        android:text="@string/loginRememberMe" />
+
+    <Button
+        android:id="@+id/loginSubmit"
+        android:layout_width="268dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/loginRememberMeCheckBox"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/login_bt"
+        android:text="@string/loginSubmit"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white"
+        android:textSize="24px" />
+
+</RelativeLayout>
