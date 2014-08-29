@@ -2,4 +2,5 @@
 <resources>
 <string name="indexPage_back">上一页</string>
 <string name="Spinner_prompt">选择项目部</string>
+<string name="tip">请选择相应的单位进行操作</string>
 </resources>

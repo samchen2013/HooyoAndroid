@@ -23,8 +23,8 @@ public class WebServiceHelper {
 			// 调用.net 的WebService.
 
 			String nameSpace = "http://tempuri.org/";
-//			 methodName = "HelloWorld";
-			String url = "http://192.168.2.104/WebSite/Service.asmx"; // 10.0.2.2
+ 
+			String url = "http://58.221.119.25/MobileService.asmx"; // 10.0.2.2
 																					// 为Android模拟器的本地(localhost)IP
 			String soapAction = nameSpace + methodName;
 

@@ -24,8 +24,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class IndexPage extends Activity {
-	private Button reback_button;
-	private TextView view_result;
+//	private Button reback_button;
+//	private TextView view_result;
 	private Spinner spinner; 
 	private ListView lv;
  
@@ -37,7 +37,7 @@ public class IndexPage extends Activity {
 		findView();
 		Bundle bundle=this.getIntent().getExtras();
 		String userName=bundle.getString("MAP_USERNAME");
-		view_result.setText("hello  "+userName+" ,login success!");
+//		view_result.setText("hello  "+userName+" ,login success!");
 		setListener();
 		
 		//设置下拉列表
@@ -86,12 +86,12 @@ public class IndexPage extends Activity {
 	};
 	
 	private void setListener(){
-		reback_button.setOnClickListener(back);
+//		reback_button.setOnClickListener(back);
 	}
 	
 	private void findView() {
-		reback_button = (Button) findViewById(R.id.report_back);
-		view_result = (TextView) findViewById(R.id.result); 
+//		reback_button = (Button) findViewById(R.id.report_back);
+//		view_result = (TextView) findViewById(R.id.result); 
 	}
 	
 
