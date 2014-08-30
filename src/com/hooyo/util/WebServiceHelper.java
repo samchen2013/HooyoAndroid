@@ -72,7 +72,7 @@ public class WebServiceHelper {
 //					return "用户名或密码错！";
 //				}
 				String ms=response.toString(); 
-				return "OK"+ms;
+				return ms;
 			} else {
 				return "服务器可能没有开启！";
 			}

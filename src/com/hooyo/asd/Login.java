@@ -3,6 +3,8 @@ package com.hooyo.asd;
 import java.io.DataInputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 
 import com.hooyo.util.WebServiceHelper;
 
@@ -34,7 +36,7 @@ public class Login extends Activity {
 	private String userName;
 	private String password;
 
-	/** 浠ヤ笅鏄疷I */
+	/**a*/
 	private EditText view_userName;
 	private EditText view_password;
 	private CheckBox view_rememberMe;
@@ -315,9 +317,14 @@ public class Login extends Activity {
 			userName = view_userName.getText().toString();
 			password = view_password.getText().toString();
 			
-			String loginState=WebServiceHelper.getLogin(userName, password);
-			Toast.makeText(Login.this, loginState, 0).show();
-			
+			//String loginState=WebServiceHelper.getLogin(userName, password);
+			 
+            Map<String, String> params=new HashMap<String, String>();
+            params.put("userName", userName);
+            params.put("Password", password);
+			String loginState=WebServiceHelper.connectWebService("Login",params);
+			Toast.makeText(Login.this, loginState, Toast.LENGTH_SHORT).show();
+			 
 			Log.d(this.toString(), "validateLogin");
 
 			// 登陆成功

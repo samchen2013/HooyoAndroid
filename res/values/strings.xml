@@ -19,5 +19,7 @@
     <string name="title_activity_list_cars">待装车辆</string>
     <string name="title_activity_car_info">CarInfoActivity</string>
     <string name="title_activity_camera">CameraActivity</string>
+    <string name="title_activity_car_info_modify">CarInfoModifyActivity</string>
+    <string name="title_activity_load_record">现场检查</string>
 
 </resources>

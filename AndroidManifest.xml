@@ -42,7 +42,7 @@
         </activity>
         <activity
             android:name="com.ljlistivew.activity.LJListViewActivity"
-            android:label="动态列表" >
+            android:label="业务信息列表" >
         </activity>
         <activity
             android:name=".ListCarsActivity"
@@ -55,6 +55,14 @@
         <activity
             android:name=".CameraActivity"
             android:label="@string/title_activity_camera" >
+        </activity>
+        <activity
+            android:name=".CarInfoModifyActivity"
+            android:label="@string/title_activity_car_info_modify" >
+        </activity>
+        <activity
+            android:name=".LoadRecordActivity"
+            android:label="@string/title_activity_load_record" >
         </activity>
     </application>
 

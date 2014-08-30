@@ -38,7 +38,7 @@ public class LJListViewActivity extends Activity implements IXListViewListener {
 		mListView = (LJListView) findViewById(R.id.xListView);
 		mAdapter = new ArrayAdapter<String>(this, R.layout.list_item, items);
 		mListView.setAdapter(mAdapter);
-		mListView.setPullLoadEnable(false,"共5条数据"); //如果不想让脚标显示数据可以mListView.setPullLoadEnable(false,null)或者mListView.setPullLoadEnable(false,"")
+		mListView.setPullLoadEnable(false,""); //如果不想让脚标显示数据可以mListView.setPullLoadEnable(false,null)或者mListView.setPullLoadEnable(false,"共5条数据")
 		mListView.setPullRefreshEnable(true);
 		mListView.setIsAnimation(true); 
 		mListView.setXListViewListener(LJListViewActivity.this);
