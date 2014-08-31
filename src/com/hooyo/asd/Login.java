@@ -323,7 +323,7 @@ public class Login extends Activity {
             params.put("userName", userName);
             params.put("Password", password);
 			String loginState=WebServiceHelper.connectWebService("Login",params);
-			Toast.makeText(Login.this, loginState, Toast.LENGTH_SHORT).show();
+//			Toast.makeText(Login.this, loginState, Toast.LENGTH_SHORT).show();
 			 
 			Log.d(this.toString(), "validateLogin");
 

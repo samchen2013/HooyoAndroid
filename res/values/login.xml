@@ -3,7 +3,7 @@
 	<string name="loginUserNameLabel">用户名</string>
 	<string name="loginPasswordLabel">密    码</string>
 
-	<string name="loginSubmit">登  陆</string>
+	<string name="loginSubmit">登  录</string>
 	<string name="loginRegister">注册</string>
 
 	<string name="loginTitle">登陆</string>

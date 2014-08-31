@@ -1,12 +1,21 @@
 package com.ljlistivew.activity;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import com.ljlistview.view.LJListView;
 import com.ljlistview.view.LJListView.IXListViewListener;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.hooyo.asd.IndexPage;
 import com.hooyo.asd.ListCarsActivity;
 import com.hooyo.asd.R;
+import com.hooyo.model.Dept;
+import com.hooyo.model.GYS;
+import com.hooyo.util.WebServiceHelper;
+import com.hooyo.util.*;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -34,7 +43,8 @@ public class LJListViewActivity extends Activity implements IXListViewListener {
 		Bundle bundle=this.getIntent().getExtras();
 		String xmbName=bundle.getString("XMBNAME");
 		this.setTitle(xmbName);
-		geneItems();
+		String xmbId=bundle.getString("XMBID");
+		geneItems("57");
 		mListView = (LJListView) findViewById(R.id.xListView);
 		mAdapter = new ArrayAdapter<String>(this, R.layout.list_item, items);
 		mListView.setAdapter(mAdapter);
@@ -64,10 +74,24 @@ public class LJListViewActivity extends Activity implements IXListViewListener {
 		mListView.onFresh();
 	}
 
-	private void geneItems() {
-		for (int i = 0; i != 5; ++i) {
-			items.add("供应商 " + (++start)+"轮毂"+"12吨");
+	private void geneItems(String xmbId) {
+		Map<String, String> params=new HashMap<String, String>();		
+        params.put("ID", xmbId);        
+		String jsonStr=WebServiceHelper.connectWebService("GetGYSList",params);
+		//解析json字符串
+		Gson gson=new Gson();		
+		List<GYS> gyss=gson.fromJson(jsonStr,new TypeToken<List<GYS>>(){}.getType());
+		for (GYS o : gyss) {
+			 
+		items.add(StringUtil.SetStringWidth(o.getSupplierName(),12)    //供应商
+				+ StringUtil.SetStringWidth(o.getGoodsName(),21)       //货物
+				+ StringUtil.SetStringWidth(o.getTon()+"吨",15)             //吨位
+				+StringUtil.SetStringWidth("签到",5)
+						);
 		}
+//		for (int i = 0; i != 5; ++i) {
+//			items.add("供应商 " + (++start)+"轮毂"+"12吨");
+//		}
 	}
 
 	private void onLoad() {
@@ -84,7 +108,7 @@ public class LJListViewActivity extends Activity implements IXListViewListener {
 			public void run() {
 				start = ++refreshCnt;
 				items.clear();
-				geneItems();
+				geneItems("57");
 				// mAdapter.notifyDataSetChanged();
 				mAdapter = new ArrayAdapter<String>(LJListViewActivity.this, R.layout.list_item, items);
 				mListView.setAdapter(mAdapter);
@@ -98,7 +122,7 @@ public class LJListViewActivity extends Activity implements IXListViewListener {
 		mHandler.postDelayed(new Runnable() {
 			@Override
 			public void run() {
-				geneItems();
+				geneItems("57");
 				mAdapter.notifyDataSetChanged();
 				onLoad();
 			}

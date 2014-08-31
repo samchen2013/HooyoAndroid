@@ -40,17 +40,6 @@
         android:layout_below="@+id/imageView1"
         android:layout_marginTop="43dp" />
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/spinner1"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="17dp"
-        android:layout_toRightOf="@+id/imageView3"
-        android:text="@string/tip"
-        android:textColor="@android:color/black" />
-
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="wrap_content"
@@ -60,5 +49,16 @@
         android:layout_marginLeft="58dp"
  
         android:src="@drawable/selectdept_tip" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView1"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="19dp"
+        android:layout_toRightOf="@+id/imageView3"
+        android:text="@string/tip"
+        android:textColor="@android:color/black" />
 
 </RelativeLayout>
