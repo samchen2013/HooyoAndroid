@@ -24,7 +24,7 @@
         android:src="@drawable/selectdept_bottom" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tttt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/imageView1"

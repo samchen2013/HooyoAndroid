@@ -6,7 +6,7 @@
     <string name="title_activity_main_test">MainTestActivity</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_maintt">登  录</string>
+    <string name="title_activity_maintt">林森物流</string>
     <string name="RecordUser">记住用户名和密码</string>
     <string name="title_activity_list_item">ListItemActivity</string>
     <string name="xlistview_header_hint_normal">下拉刷新</string>
@@ -17,9 +17,9 @@
     <string name="xlistview_footer_hint_ready">松开载入更多</string>
     <string name="hello">数据列表</string>
     <string name="title_activity_list_cars">待装车辆</string>
-    <string name="title_activity_car_info">CarInfoActivity</string>
-    <string name="title_activity_camera">CameraActivity</string>
-    <string name="title_activity_car_info_modify">CarInfoModifyActivity</string>
+    <string name="title_activity_car_info">林森物流</string>
+    <string name="title_activity_camera">林森物流</string>
+    <string name="title_activity_car_info_modify">林森物流</string>
     <string name="title_activity_load_record">现场检查</string>
 
 </resources>

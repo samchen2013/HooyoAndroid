@@ -42,7 +42,7 @@
         android:src="@drawable/line" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tttt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/ImageView01"
@@ -73,11 +73,11 @@
         android:textColor="#ffff0000" />
 
     <EditText
-        android:id="@+id/edgc"
+        android:id="@+id/edgc2"
         android:layout_width="100dp"
         android:layout_height="33dp"
-        android:layout_alignBaseline="@+id/textView2"
-        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignBaseline="@+id/tttt"
+        android:layout_alignBottom="@+id/tttt"
         android:layout_alignLeft="@+id/tv_CarNo"
         android:ems="10"
         android:inputType="text"
@@ -88,7 +88,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView9"
-        android:layout_alignTop="@+id/textView2"
+        android:layout_alignTop="@+id/tttt"
         android:text="> >" />
 
     <EditText
@@ -125,7 +125,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/ImageView02"
-        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignLeft="@+id/tttt"
         android:text="件数"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -139,20 +139,21 @@
         android:text="> >" />
 
     <ImageView
-        android:id="@+id/bt_save"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:src="@drawable/bt_save" />
-
-    <ImageView
-        android:id="@+id/ImageView03"
+        android:id="@+id/bt_takepicture"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/edDriverB"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="28dp"
         android:src="@drawable/takepic" />
+
+    <ImageView
+        android:id="@+id/bt_uploadPics"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/bt_takepicture"
+        android:layout_below="@+id/bt_takepicture"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/bt_save" />
 
 </RelativeLayout>

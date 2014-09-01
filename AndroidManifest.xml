@@ -30,7 +30,7 @@
         </activity>
         <activity
             android:name=".IndexPage"
-            android:label="登陆后的页面" />
+            android:label="林森物流" />
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login"

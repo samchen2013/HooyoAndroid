@@ -1,6 +1,8 @@
 package com.hooyo.model;
 
 public class CarDetail {
+	String ID;	
+	
 	String ZhuChe;	
 	String DriverA;
 	String GoodsName;
@@ -9,6 +11,13 @@ public class CarDetail {
 	String YQZCDate;
 	String YQDDDate;
 	String ton;
+	 
+	public String getID() {
+		return ID;
+	}
+	public void setID(String iD) {
+		ID = iD;
+	}
 	public String getZhuChe() {
 		return ZhuChe;
 	}

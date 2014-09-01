@@ -1,5 +1,6 @@
 package com.ljlistivew.activity;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -14,7 +15,6 @@ import com.hooyo.asd.ListCarsActivity;
 import com.hooyo.asd.R;
 import com.hooyo.model.Dept;
 import com.hooyo.model.GYS;
-import com.hooyo.util.WebServiceHelper;
 import com.hooyo.util.*;
 
 import android.app.Activity;
@@ -35,6 +35,8 @@ public class LJListViewActivity extends Activity implements IXListViewListener {
 	private Handler mHandler;
 	private int start = 0;
 	private static int refreshCnt = 0;
+	private String gfmc,hwmc,ton;
+	private List<GYS> gyss;
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -55,7 +57,7 @@ public class LJListViewActivity extends Activity implements IXListViewListener {
 		mListView.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
-			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+			public void onItemClick(AdapterView<?> arg0, View arg1, int position,
 					long arg3) {
 				// TODO Auto-generated method stub
 				TextView tv=(TextView) arg1.findViewById(R.id.list_item_textview);
@@ -66,6 +68,8 @@ public class LJListViewActivity extends Activity implements IXListViewListener {
 			    intent.setClass(LJListViewActivity.this, ListCarsActivity.class);
 				Bundle bundle = new Bundle();
 				bundle.putString("GOODSINFO", tv.getText().toString());
+				
+				bundle.putString("Id",gyss.get(position-1).getID());
 				intent.putExtras(bundle);				
 				startActivity(intent);
 			}
@@ -80,12 +84,12 @@ public class LJListViewActivity extends Activity implements IXListViewListener {
 		String jsonStr=WebServiceHelper.connectWebService("GetGYSList",params);
 		//解析json字符串
 		Gson gson=new Gson();		
-		List<GYS> gyss=gson.fromJson(jsonStr,new TypeToken<List<GYS>>(){}.getType());
+		gyss=gson.fromJson(jsonStr,new TypeToken<List<GYS>>(){}.getType());
 		for (GYS o : gyss) {
 			 
 		items.add(StringUtil.SetStringWidth(o.getSupplierName(),12)    //供应商
 				+ StringUtil.SetStringWidth(o.getGoodsName(),21)       //货物
-				+ StringUtil.SetStringWidth(o.getTon()+"吨",15)             //吨位
+				+ StringUtil.SetStringWidth(o.getTon()+"吨",15)         //吨位
 				+StringUtil.SetStringWidth("签到",5)
 						);
 		}
@@ -95,10 +99,13 @@ public class LJListViewActivity extends Activity implements IXListViewListener {
 	}
 
 	private void onLoad() {
-		mListView.setCount("10");
+		mListView.setCount(gyss.size()+"");
 		mListView.stopRefresh();
 		mListView.stopLoadMore();
-		mListView.setRefreshTime("刚刚");
+		
+		SimpleDateFormat    sDateFormat    =   new    SimpleDateFormat("hh:mm:ss");       
+		String    refreshtime    =    sDateFormat.format(new    java.util.Date());   
+		mListView.setRefreshTime(refreshtime);
 	}
 	
 	@Override

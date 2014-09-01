@@ -5,7 +5,7 @@
     <string name="t_GoodsName">货物名称</string>
     <string name="t_Start"> 起点</string>
     <string name="t_End">讫点</string>
-    <string name="t_LoadTime">要求车时间</string>
+    <string name="t_LoadTime">要求装车时间</string>
     <string name="t_ArrTime">要求到达时间</string>
     <string name="t_ton">调配吨位</string>
     <string name="e_CarNo"/>
