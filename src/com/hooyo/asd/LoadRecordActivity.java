@@ -2,6 +2,11 @@ package com.hooyo.asd;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+import com.hooyo.util.WebServiceHelper;
+import com.hooyo.util.ZoomBitmap;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -53,7 +58,7 @@ public class LoadRecordActivity extends Activity {
 		
 		InitView();
 		Bundle bundle=this.getIntent().getExtras();
-		String carNo=bundle.getString("CARNO");
+		String carNo=bundle.getString("CARNO").replace(" ", "");
 		ID=bundle.getString("ID");
 		tv_CarNo3.setText(carNo);
 		
@@ -93,21 +98,51 @@ public class LoadRecordActivity extends Activity {
 		ImV_pic2.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				saveAllPictrues();
+				if(picPaths[1].equals("")){
+					String msg=takePicture(CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE2);
+					if(msg.equals("拍照失败，请确认已经插入SD卡！"))
+						Toast.makeText(LoadRecordActivity.this, msg,
+								Toast.LENGTH_SHORT).show();
+					else
+						picPaths[1]=msg;
+				}else
+				{
+					openPictrue(picPaths[1]);
+				}
 			}
 		});
 		
 		ImV_pic3.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				saveAllPictrues();
+				if(picPaths[2].equals("")){
+					String msg=takePicture(CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE3);
+					if(msg.equals("拍照失败，请确认已经插入SD卡！"))
+						Toast.makeText(LoadRecordActivity.this, msg,
+								Toast.LENGTH_SHORT).show();
+					else
+						picPaths[2]=msg;
+				}else
+				{
+					openPictrue(picPaths[2]);
+				}
 			}
 		});
 		
 		ImV_pic4.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				saveAllPictrues();
+				if(picPaths[3].equals("")){
+					String msg=takePicture(CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE4);
+					if(msg.equals("拍照失败，请确认已经插入SD卡！"))
+						Toast.makeText(LoadRecordActivity.this, msg,
+								Toast.LENGTH_SHORT).show();
+					else
+						picPaths[3]=msg;
+				}else
+				{
+					openPictrue(picPaths[3]);
+				}
 			}
 		});
 		
@@ -116,15 +151,73 @@ public class LoadRecordActivity extends Activity {
 	}
 	
 	
-	protected void openPictrue(String string) {
-		// TODO Auto-generated method stub
+	protected void openPictrue(String path) {
+		Intent intent = new Intent(); 
+	    intent.setClass(LoadRecordActivity.this, ShowPictrueActivity.class);
+		Bundle bundle = new Bundle();
+		bundle.putString("PATH",path);
+		 
+		intent.putExtras(bundle);
+		 
+		startActivity(intent);
 		
 	}
 
 
 	protected void saveAllPictrues() {
 		// TODO Auto-generated method stub
-		
+		if(ed_sjdw.getText().toString().trim().equals(""))
+		{
+			toast("请输入实际吨位！");
+			return;
+		}
+//		 ed_js=
+		if(ed_js.getText().toString().trim().equals(""))
+		{
+			toast("请输入件数！");
+			return;
+		}
+		if(picPaths[0].equals("")
+	       &&picPaths[1].equals("")
+	       &&picPaths[2].equals("")
+	       &&picPaths[3].equals(""))
+		{
+			toast("请至少拍摄一张照片！");
+			return;
+		}
+		//开始上传
+		 
+		//resizePic();
+		try
+		{
+			String[] images64CodeString=new String[]{"","","","",""};
+			for(int i=0;i<4;i++)
+			{
+				if(!picPaths[i].equals(""))
+				{
+					images64CodeString[i]=ZoomBitmap.toLow1Mbase64String(picPaths[i]);
+				}
+			}
+			
+			 Map<String, String> params=new HashMap<String, String>();
+	            params.put("ID", ID);
+	            params.put("ton", ed_sjdw.getText().toString().trim());
+	            params.put("js", ed_js.getText().toString().trim());
+	            params.put("image1", images64CodeString[0]);
+	            params.put("image2", images64CodeString[1]);
+	            params.put("image3", images64CodeString[2]);
+	            params.put("image4", images64CodeString[3]);
+				String State=WebServiceHelper.connectWebService("Login",params);
+				String msg[]=State.split(",");
+				String result="";
+				if(msg[0].equals("成功")) result+="信息修改成功！";
+				if(msg[1].equals("照片上传成功")) result+="照片上传成功！";
+				toast(result);
+		}
+		catch(Exception e)
+		{
+			toast(e.toString());
+		}
 	}
 
 
@@ -153,19 +246,85 @@ public class LoadRecordActivity extends Activity {
     
     @Override
  	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
- 		super.onActivityResult(requestCode, resultCode, data);
- 		if (requestCode == CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE1) {//第一张图片
- 			if (resultCode == RESULT_OK) {
- 				Log.e(tag, "获取图片成功，path="+picFileFullName+"picpath0:"+picPaths[0]);
- 				toast("获取图片成功，path="+picFileFullName);
- 				setImageView(ImV_pic1,picPaths[0]);
- 			} else if (resultCode == RESULT_CANCELED) {
- 				// 用户取消了图像捕获
- 			} else {
- 				// 图像捕获失败，提示用户
- 				Log.e(tag, "拍照失败");
- 			}
- 		} 
+		super.onActivityResult(requestCode, resultCode, data);
+		if (requestCode == CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE1) {// 第一张图片
+			if (resultCode == RESULT_OK) {
+				Log.e(tag, "获取图片成功，path=" + picFileFullName + "picpath0:"
+						+ picPaths[0]);
+				toast("获取图片成功，path=" + picFileFullName);
+				setImageView(ImV_pic1, picPaths[0]);
+			} else if (resultCode == RESULT_CANCELED) {
+				// 用户取消了图像捕获
+			} else {
+				// 图像捕获失败，提示用户
+				toast("拍照失败!");
+				Log.e(tag, "拍照失败");
+			}
+		}
+
+		switch (requestCode) {
+		case CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE1: {
+			if (resultCode == RESULT_OK) {
+				Log.e(tag, "获取图片成功，path=" + picFileFullName + "picpath0:"
+						+ picPaths[0]);
+				toast("获取图片成功，path=" + picFileFullName);
+				setImageView(ImV_pic1, picPaths[0]);
+			} else if (resultCode == RESULT_CANCELED) {
+				// 用户取消了图像捕获
+			} else {
+				// 图像捕获失败，提示用户
+				toast("拍照失败!");
+				Log.e(tag, "拍照失败");
+			}
+		}
+			break;
+		case CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE2: {
+			if (resultCode == RESULT_OK) {
+				Log.e(tag, "获取图片成功，path=" + picFileFullName + "picpath0:"
+						+ picPaths[1]);
+				toast("获取图片成功，path=" + picFileFullName);
+				setImageView(ImV_pic2, picPaths[1]);
+			} else if (resultCode == RESULT_CANCELED) {
+				// 用户取消了图像捕获
+			} else {
+				// 图像捕获失败，提示用户
+				toast("拍照失败!");
+				Log.e(tag, "拍照失败");
+			}
+		}
+			break;
+		case CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE3: {
+			if (resultCode == RESULT_OK) {
+				Log.e(tag, "获取图片成功，path=" + picFileFullName + "picpath0:"
+						+ picPaths[2]);
+				toast("获取图片成功，path=" + picFileFullName);
+				setImageView(ImV_pic3, picPaths[2]);
+			} else if (resultCode == RESULT_CANCELED) {
+				// 用户取消了图像捕获
+			} else {
+				// 图像捕获失败，提示用户
+				toast("拍照失败!");
+				Log.e(tag, "拍照失败");
+			}
+		}
+			break;
+		case CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE4: {
+			if (resultCode == RESULT_OK) {
+				Log.e(tag, "获取图片成功，path=" + picFileFullName + "picpath0:"
+						+ picPaths[3]);
+				toast("获取图片成功，path=" + picFileFullName);
+				setImageView(ImV_pic4, picPaths[3]);
+			} else if (resultCode == RESULT_CANCELED) {
+				// 用户取消了图像捕获
+			} else {
+				// 图像捕获失败，提示用户
+				toast("拍照失败!");
+				Log.e(tag, "拍照失败");
+			}
+		}
+			break;
+
+		}
  	}
  	
  	private void setImageView(ImageView imageView,String realPath){

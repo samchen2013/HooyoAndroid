@@ -64,6 +64,16 @@
             android:name=".LoadRecordActivity"
             android:label="@string/title_activity_load_record" >
         </activity>
+        <activity
+            android:name=".PicShowActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_pic_show"
+            android:theme="@style/FullscreenTheme" >
+        </activity>
+        <activity
+            android:name=".ShowPictrueActivity"
+            android:label="@string/title_activity_show_pictrue" >
+        </activity>
     </application>
 
 </manifest>

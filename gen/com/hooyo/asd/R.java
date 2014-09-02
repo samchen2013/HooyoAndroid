@@ -457,6 +457,14 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int logo=0x7f01002d;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int metaButtonBarButtonStyle=0x7f01006f;
+        /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+         */
+        public static final int metaButtonBarStyle=0x7f01006e;
         /**  The type of navigation to use. 
          <p>Must be one of the following constant values.</p>
 <table>
@@ -858,10 +866,11 @@ containing a value of this type.
         public static final int abc_split_action_bar_is_narrow=0x7f060002;
     }
     public static final class color {
-        public static final int abc_search_url_text_holo=0x7f070003;
+        public static final int abc_search_url_text_holo=0x7f070004;
         public static final int abc_search_url_text_normal=0x7f070000;
         public static final int abc_search_url_text_pressed=0x7f070002;
         public static final int abc_search_url_text_selected=0x7f070001;
+        public static final int black_overlay=0x7f070003;
     }
     public static final class dimen {
         /**  Default height of an action bar. 
@@ -1140,7 +1149,7 @@ containing a value of this type.
         public static final int action_menu_divider=0x7f050016;
         public static final int action_menu_presenter=0x7f050017;
         public static final int action_mode_close_button=0x7f050024;
-        public static final int action_settings=0x7f0500a6;
+        public static final int action_settings=0x7f0500aa;
         public static final int activity_chooser_view_content=0x7f050025;
         public static final int always=0x7f05000b;
         public static final int beginning=0x7f050011;
@@ -1160,6 +1169,7 @@ containing a value of this type.
         public static final int dialog=0x7f05000e;
         public static final int disableHome=0x7f050008;
         public static final int dropdown=0x7f05000f;
+        public static final int dummy_button=0x7f050090;
         public static final int edDriverB=0x7f050074;
         public static final int ed_js=0x7f05007e;
         public static final int ed_sjdw=0x7f05007d;
@@ -1173,8 +1183,10 @@ containing a value of this type.
         public static final int end=0x7f050013;
         public static final int expand_activities_button=0x7f050026;
         public static final int expanded_menu=0x7f05002c;
-        public static final int goods=0x7f050092;
-        public static final int gys=0x7f050091;
+        public static final int fullscreen_content=0x7f05008e;
+        public static final int fullscreen_content_controls=0x7f05008f;
+        public static final int goods=0x7f050096;
+        public static final int gys=0x7f050095;
         public static final int home=0x7f050014;
         public static final int homeAsUp=0x7f050005;
         public static final int icon=0x7f05002a;
@@ -1187,15 +1199,16 @@ containing a value of this type.
         public static final int listMode=0x7f050001;
         public static final int listView1=0x7f05007a;
         public static final int list_item=0x7f050029;
-        public static final int list_item_textview=0x7f050090;
+        public static final int list_item_textview=0x7f050094;
         public static final int login=0x7f050089;
-        public static final int loginPasswordEdit=0x7f0500a0;
-        public static final int loginRememberMeCheckBox=0x7f05009f;
-        public static final int loginSubmit=0x7f0500a1;
-        public static final int loginUserNameEdit=0x7f0500a2;
+        public static final int loginPasswordEdit=0x7f0500a4;
+        public static final int loginRememberMeCheckBox=0x7f0500a3;
+        public static final int loginSubmit=0x7f0500a5;
+        public static final int loginUserNameEdit=0x7f0500a6;
         public static final int login_form=0x7f050085;
         public static final int login_progress=0x7f050084;
         public static final int middle=0x7f050012;
+        public static final int myPic=0x7f050091;
         public static final int never=0x7f050009;
         public static final int none=0x7f050010;
         public static final int normal=0x7f050000;
@@ -1219,7 +1232,7 @@ containing a value of this type.
         public static final int showCustom=0x7f050007;
         public static final int showHome=0x7f050004;
         public static final int showTitle=0x7f050006;
-        public static final int spinner1=0x7f05008f;
+        public static final int spinner1=0x7f050093;
         public static final int split_action_bar=0x7f05001e;
         public static final int submit_area=0x7f050039;
         public static final int tabMode=0x7f050002;
@@ -1239,12 +1252,12 @@ containing a value of this type.
         public static final int textView6=0x7f050059;
         public static final int textView7=0x7f050058;
         public static final int textView9=0x7f05004c;
-        public static final int textview=0x7f05009e;
+        public static final int textview=0x7f0500a2;
         public static final int title=0x7f05002b;
-        public static final int ton=0x7f050093;
+        public static final int ton=0x7f050097;
         public static final int top_action_bar=0x7f050020;
         public static final int tttt=0x7f050048;
-        public static final int tvMg=0x7f05008e;
+        public static final int tvMg=0x7f050092;
         public static final int tv_ArrTime=0x7f05005b;
         public static final int tv_CarNo=0x7f050049;
         public static final int tv_CarNo2=0x7f050078;
@@ -1254,23 +1267,23 @@ containing a value of this type.
         public static final int tv_LoadTime=0x7f050057;
         public static final int tv_Start=0x7f050042;
         public static final int tv_driverA=0x7f050050;
-        public static final int tv_gfmc=0x7f0500a3;
-        public static final int tv_hwmc=0x7f0500a4;
-        public static final int tv_ton=0x7f0500a5;
+        public static final int tv_gfmc=0x7f0500a7;
+        public static final int tv_hwmc=0x7f0500a8;
+        public static final int tv_ton=0x7f0500a9;
         public static final int txtMsg=0x7f05008d;
         public static final int up=0x7f050021;
         public static final int useLogo=0x7f050003;
         public static final int withText=0x7f05000c;
-        public static final int xListView=0x7f050094;
-        public static final int xlistview_footer_content=0x7f050095;
-        public static final int xlistview_footer_hint_textview=0x7f050097;
-        public static final int xlistview_footer_progressbar=0x7f050096;
-        public static final int xlistview_header_arrow=0x7f05009c;
-        public static final int xlistview_header_content=0x7f050098;
-        public static final int xlistview_header_hint_textview=0x7f05009a;
-        public static final int xlistview_header_progressbar=0x7f05009d;
-        public static final int xlistview_header_text=0x7f050099;
-        public static final int xlistview_header_time=0x7f05009b;
+        public static final int xListView=0x7f050098;
+        public static final int xlistview_footer_content=0x7f050099;
+        public static final int xlistview_footer_hint_textview=0x7f05009b;
+        public static final int xlistview_footer_progressbar=0x7f05009a;
+        public static final int xlistview_header_arrow=0x7f0500a0;
+        public static final int xlistview_header_content=0x7f05009c;
+        public static final int xlistview_header_hint_textview=0x7f05009e;
+        public static final int xlistview_header_progressbar=0x7f0500a1;
+        public static final int xlistview_header_text=0x7f05009d;
+        public static final int xlistview_header_time=0x7f05009f;
     }
     public static final class integer {
         /**  The maximum number of action buttons that should be permitted within
@@ -1334,33 +1347,35 @@ containing a value of this type.
         public static final int activity_login=0x7f030021;
         public static final int activity_main_test=0x7f030022;
         public static final int activity_maintt=0x7f030023;
-        public static final int fragment_main_test=0x7f030024;
-        public static final int indexpage=0x7f030025;
-        public static final int list_item=0x7f030026;
-        public static final int listview=0x7f030027;
-        public static final int listviewitem=0x7f030028;
-        public static final int ljlistview=0x7f030029;
-        public static final int ljlistview_footer=0x7f03002a;
-        public static final int ljlistview_header=0x7f03002b;
-        public static final int ljlistview_infohint=0x7f03002c;
-        public static final int login=0x7f03002d;
-        public static final int main=0x7f03002e;
-        public static final int main_cars=0x7f03002f;
-        public static final int main_layout=0x7f030030;
-        public static final int mian_text=0x7f030031;
-        public static final int support_simple_spinner_dropdown_item=0x7f030032;
+        public static final int activity_pic_show=0x7f030024;
+        public static final int activity_show_pictrue=0x7f030025;
+        public static final int fragment_main_test=0x7f030026;
+        public static final int indexpage=0x7f030027;
+        public static final int list_item=0x7f030028;
+        public static final int listview=0x7f030029;
+        public static final int listviewitem=0x7f03002a;
+        public static final int ljlistview=0x7f03002b;
+        public static final int ljlistview_footer=0x7f03002c;
+        public static final int ljlistview_header=0x7f03002d;
+        public static final int ljlistview_infohint=0x7f03002e;
+        public static final int login=0x7f03002f;
+        public static final int main=0x7f030030;
+        public static final int main_cars=0x7f030031;
+        public static final int main_layout=0x7f030032;
+        public static final int mian_text=0x7f030033;
+        public static final int support_simple_spinner_dropdown_item=0x7f030034;
     }
     public static final class menu {
         public static final int main_test=0x7f0c0000;
     }
     public static final class string {
-        public static final int Load=0x7f0a0040;
+        public static final int Load=0x7f0a0044;
         public static final int MENU_ABOUT=0x7f0a0017;
         public static final int MENU_EXIT=0x7f0a0016;
-        public static final int Modify=0x7f0a003e;
+        public static final int Modify=0x7f0a0042;
         public static final int Msg=0x7f0a001b;
         public static final int RecordUser=0x7f0a0020;
-        public static final int SignIn=0x7f0a003f;
+        public static final int SignIn=0x7f0a0043;
         public static final int Spinner_prompt=0x7f0a000e;
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
          */
@@ -1404,21 +1419,23 @@ containing a value of this type.
         public static final int abc_shareactionprovider_share_with_application=0x7f0a000b;
         public static final int aboutInfo=0x7f0a0018;
         public static final int action_settings=0x7f0a001e;
-        public static final int action_sign_in=0x7f0a0044;
-        public static final int action_sign_in_short=0x7f0a0045;
+        public static final int action_sign_in=0x7f0a0048;
+        public static final int action_sign_in_short=0x7f0a0049;
         public static final int app_name=0x7f0a001a;
-        public static final int e_ArrTime=0x7f0a003c;
-        public static final int e_CarNo=0x7f0a0036;
-        public static final int e_Driver=0x7f0a0037;
-        public static final int e_End=0x7f0a003a;
-        public static final int e_GoodsName=0x7f0a0038;
-        public static final int e_LoadTime=0x7f0a003b;
-        public static final int e_Start=0x7f0a0039;
-        public static final int e_ton=0x7f0a003d;
-        public static final int error_field_required=0x7f0a0049;
-        public static final int error_incorrect_password=0x7f0a0048;
-        public static final int error_invalid_email=0x7f0a0046;
-        public static final int error_invalid_password=0x7f0a0047;
+        public static final int dummy_button=0x7f0a002f;
+        public static final int dummy_content=0x7f0a0030;
+        public static final int e_ArrTime=0x7f0a0040;
+        public static final int e_CarNo=0x7f0a003a;
+        public static final int e_Driver=0x7f0a003b;
+        public static final int e_End=0x7f0a003e;
+        public static final int e_GoodsName=0x7f0a003c;
+        public static final int e_LoadTime=0x7f0a003f;
+        public static final int e_Start=0x7f0a003d;
+        public static final int e_ton=0x7f0a0041;
+        public static final int error_field_required=0x7f0a004d;
+        public static final int error_incorrect_password=0x7f0a004c;
+        public static final int error_invalid_email=0x7f0a004a;
+        public static final int error_invalid_password=0x7f0a004b;
         public static final int hello=0x7f0a0028;
         public static final int hello_world=0x7f0a001d;
         public static final int indexPage_back=0x7f0a000d;
@@ -1431,16 +1448,16 @@ containing a value of this type.
         public static final int ok_label=0x7f0a0019;
         /**  Strings related to login 
          */
-        public static final int prompt_email=0x7f0a0042;
-        public static final int prompt_password=0x7f0a0043;
-        public static final int t_ArrTime=0x7f0a0034;
-        public static final int t_CarNo=0x7f0a002e;
-        public static final int t_Driver=0x7f0a002f;
-        public static final int t_End=0x7f0a0032;
-        public static final int t_GoodsName=0x7f0a0030;
-        public static final int t_LoadTime=0x7f0a0033;
-        public static final int t_Start=0x7f0a0031;
-        public static final int t_ton=0x7f0a0035;
+        public static final int prompt_email=0x7f0a0046;
+        public static final int prompt_password=0x7f0a0047;
+        public static final int t_ArrTime=0x7f0a0038;
+        public static final int t_CarNo=0x7f0a0032;
+        public static final int t_Driver=0x7f0a0033;
+        public static final int t_End=0x7f0a0036;
+        public static final int t_GoodsName=0x7f0a0034;
+        public static final int t_LoadTime=0x7f0a0037;
+        public static final int t_Start=0x7f0a0035;
+        public static final int t_ton=0x7f0a0039;
         public static final int tip=0x7f0a000f;
         public static final int title_activity_camera=0x7f0a002b;
         public static final int title_activity_car_info=0x7f0a002a;
@@ -1448,9 +1465,11 @@ containing a value of this type.
         public static final int title_activity_list_cars=0x7f0a0029;
         public static final int title_activity_list_item=0x7f0a0021;
         public static final int title_activity_load_record=0x7f0a002d;
-        public static final int title_activity_login=0x7f0a0041;
+        public static final int title_activity_login=0x7f0a0045;
         public static final int title_activity_main_test=0x7f0a001c;
         public static final int title_activity_maintt=0x7f0a001f;
+        public static final int title_activity_pic_show=0x7f0a002e;
+        public static final int title_activity_show_pictrue=0x7f0a0031;
         public static final int xlistview_footer_hint_normal=0x7f0a0026;
         public static final int xlistview_footer_hint_ready=0x7f0a0027;
         public static final int xlistview_header_hint_loading=0x7f0a0024;
@@ -1462,11 +1481,13 @@ containing a value of this type.
         /** 
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+
     
 
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
+
         
          */
         public static final int AppBaseTheme=0x7f0b008b;
@@ -1474,6 +1495,10 @@ containing a value of this type.
  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f0b008c;
+        public static final int ButtonBar=0x7f0b008e;
+        public static final int ButtonBarButton=0x7f0b008f;
+        public static final int FullscreenActionBarStyle=0x7f0b0090;
+        public static final int FullscreenTheme=0x7f0b008d;
         /**  Mimic text appearance in select_dialog_item.xml 
          */
         public static final int TextAppearance_AppCompat_Base_CompactMenu_Dialog=0x7f0b0063;
@@ -2365,6 +2390,46 @@ containing a value of this type.
           @attr name com.hooyo.asd:initialActivityCount
         */
         public static final int ActivityChooserView_initialActivityCount = 0;
+        /** 
+         Declare custom theme attributes that allow changing which styles are
+         used for button bars depending on the API level.
+         ?android:attr/buttonBarStyle is new as of API 11 so this is
+         necessary to support previous API levels.
+    
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #ButtonBarContainerTheme_metaButtonBarButtonStyle com.hooyo.asd:metaButtonBarButtonStyle}</code></td><td></td></tr>
+           <tr><td><code>{@link #ButtonBarContainerTheme_metaButtonBarStyle com.hooyo.asd:metaButtonBarStyle}</code></td><td></td></tr>
+           </table>
+           @see #ButtonBarContainerTheme_metaButtonBarButtonStyle
+           @see #ButtonBarContainerTheme_metaButtonBarStyle
+         */
+        public static final int[] ButtonBarContainerTheme = {
+            0x7f01006e, 0x7f01006f
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.hooyo.asd.R.attr#metaButtonBarButtonStyle}
+          attribute's value can be found in the {@link #ButtonBarContainerTheme} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.hooyo.asd:metaButtonBarButtonStyle
+        */
+        public static final int ButtonBarContainerTheme_metaButtonBarButtonStyle = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.hooyo.asd.R.attr#metaButtonBarStyle}
+          attribute's value can be found in the {@link #ButtonBarContainerTheme} array.
+
+
+          <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
+or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
+          @attr name com.hooyo.asd:metaButtonBarStyle
+        */
+        public static final int ButtonBarContainerTheme_metaButtonBarStyle = 0;
         /** Attributes that can be used with a CompatTextView.
            <p>Includes the following attributes:</p>
            <table>

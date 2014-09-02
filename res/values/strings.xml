@@ -21,5 +21,9 @@
     <string name="title_activity_camera">林森物流</string>
     <string name="title_activity_car_info_modify">林森物流</string>
     <string name="title_activity_load_record">现场检查</string>
+    <string name="title_activity_pic_show">显示图片</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_show_pictrue">图片详情</string>
 
 </resources>

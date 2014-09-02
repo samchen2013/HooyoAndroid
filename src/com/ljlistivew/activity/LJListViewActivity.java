@@ -75,7 +75,7 @@ public class LJListViewActivity extends Activity implements IXListViewListener {
 			}
 		});
 		mHandler = new Handler();
-		mListView.onFresh();
+		//mListView.onFresh();
 	}
 
 	private void geneItems(String xmbId) {
