@@ -91,17 +91,6 @@
         android:layout_alignTop="@+id/tttt"
         android:text="> >" />
 
-    <EditText
-        android:id="@+id/edDriverB"
-        android:layout_width="100dp"
-        android:layout_height="33dp"
-        android:layout_alignBaseline="@+id/textView4"
-        android:layout_alignBottom="@+id/textView4"
-        android:layout_alignLeft="@+id/edgc"
-        android:ems="10"
-        android:inputType="text"
-        android:textSize="20sp" />
-
     <TextView
         android:id="@+id/TextView03"
         android:layout_width="wrap_content"
@@ -118,15 +107,6 @@
         android:layout_alignTop="@+id/textView9"
         android:layout_marginLeft="19dp"
         android:text="主车 (牌号)"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/ImageView02"
-        android:layout_alignLeft="@+id/tttt"
-        android:text="件数"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
@@ -155,5 +135,27 @@
         android:layout_below="@+id/bt_takepicture"
         android:layout_marginTop="25dp"
         android:src="@drawable/bt_save" />
+
+    <EditText
+        android:id="@+id/edDriverB"
+        android:layout_width="100dp"
+        android:layout_height="33dp"
+        android:layout_alignBottom="@+id/edgc2"
+        android:layout_toLeftOf="@+id/TextView01"
+        android:ems="10"
+        android:inputType="text"
+        android:textSize="20sp" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tttt"
+        android:layout_below="@+id/edgc2"
+        android:text="件数"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
 </RelativeLayout>

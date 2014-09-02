@@ -85,7 +85,7 @@ public class CarInfoActivity extends Activity {
 			intent.setClass(CarInfoActivity.this, LoadRecordActivity.class);
 			
 			Bundle bundle = new Bundle();
-			bundle.putString("Info",carNo+"-"+goodsInfo);
+			bundle.putString("CARNO",carNo);
 			bundle.putString("ID",ID);
 			intent.putExtras(bundle);
 			 
