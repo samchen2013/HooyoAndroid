@@ -1,7 +1,6 @@
 eclipse.preferences.version=1
-encoding//src/com/hooyo/asd/ListItemActivity.java=UTF-8
 encoding//src/com/hooyo/asd/Login.java=UTF-8
-encoding//src/com/hooyo/asd/WebServHelper.java=UTF-8
+encoding//src/com/hooyo/util/WebServHelper.java=UTF-8
 encoding//src/com/ljlistivew/activity/LJListViewActivity.java=UTF-8
 encoding//src/com/ljlistview/view/LJListView.java=UTF-8
 encoding//src/com/ljlistview/view/LJListViewHeader.java=UTF-8
