@@ -5,10 +5,12 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.hooyo.asd.Login.LoginFailureHandler;
 import com.hooyo.util.WebServiceHelper;
 import com.hooyo.util.ZoomBitmap;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
@@ -18,6 +20,8 @@ import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Looper;
+import android.os.Message;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.Menu;
@@ -50,6 +54,8 @@ public class LoadRecordActivity extends Activity {
 	private EditText ed_js;
 	private TextView tv_CarNo3;
 	private ImageView bt_save;
+	private ProgressDialog proDialog;
+	private TextView tv_saveimagesMsg;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +71,13 @@ public class LoadRecordActivity extends Activity {
 		bt_save.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				
 				saveAllPictrues();
+//				proDialog = ProgressDialog.show(LoadRecordActivity.this, "保存信息和图片.",
+//						"上传中...", true, true);
+//				// 开一个线程进行登录验证,主要是用于失败,成功可以直接通过startAcitivity(Intent)转向
+//				Thread saveThread = new Thread(new SaveZYFailureHandler());
+//				saveThread.start();
 			}
 		});
 		//单击事件
@@ -207,15 +219,15 @@ public class LoadRecordActivity extends Activity {
 	            params.put("image2", images64CodeString[1]);
 	            params.put("image3", images64CodeString[2]);
 	            params.put("image4", images64CodeString[3]);
-				String State=WebServiceHelper.connectWebService("Login",params);
-				String msg[]=State.split(",");
-				String result="";
-				if(msg[0].equals("成功")) result+="信息修改成功！";
-				if(msg[1].equals("照片上传成功")) result+="照片上传成功！";
-				toast(result);
+				String State=WebServiceHelper.connectWebService("ModifyCarZYInfo",params);				 
+				tv_saveimagesMsg.setText(State);
+				proDialog.dismiss();
+				toast(State);
 		}
 		catch(Exception e)
 		{
+			tv_saveimagesMsg.setText(e.toString());
+			proDialog.dismiss();
 			toast(e.toString());
 		}
 	}
@@ -406,5 +418,17 @@ public class LoadRecordActivity extends Activity {
 		 ed_js=(EditText)findViewById(R.id.ed_js);
 		 tv_CarNo3=(TextView)findViewById(R.id.tv_CarNo3);
 		bt_save=(ImageView)findViewById(R.id.bt_saveallpci);
+		tv_saveimagesMsg =(TextView)findViewById(R.id.tv_saveimagesMsg);
 	}
+
+
+class SaveZYFailureHandler implements Runnable {
+	@Override
+	public void run() {
+		Looper.prepare();//必须有的一句
+		saveAllPictrues();
+	}
+
 }
+}
+
