@@ -24,7 +24,7 @@ public class WebServiceHelper {
 
 			String nameSpace = "http://tempuri.org/";
  
-			String url = "http://58.221.119.25/MobileService.asmx"; // 10.0.2.2
+			String url = "http://58.221.119.25:8080/MobileService.asmx"; // 10.0.2.2
 																					// 为Android模拟器的本地(localhost)IP
 			String soapAction = nameSpace + methodName;
 

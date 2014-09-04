@@ -52,13 +52,15 @@
                 android:layout_height="wrap_content"
                 android:text="  > >  " />
 
-            <TextView
-                android:id="@+id/tv_CarNo2"
+           <TextView
+                android:id="@+id/stv_zhuche"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="张三"
-                android:textColor="#ffff0000"
-                android:textSize="18sp" />
+                android:text="请选择主车"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#ff0000ff" />
+
+           
 
         </TableRow>
 
@@ -85,16 +87,13 @@
                 android:layout_height="wrap_content"
                 android:text="  > >  " />
 
-            <EditText
-                android:id="@+id/edgc2"
-                android:layout_width="100dp"
-                android:layout_height="40dp"
-                android:ems="10"
-                android:inputType="text"
-                android:textSize="20sp" >
-
-                <requestFocus />
-            </EditText>
+             <TextView
+                android:id="@+id/stv_gc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="请选择挂车"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#ff0000ff" />
         </TableRow>
 
         <TableRow
@@ -121,12 +120,12 @@
                 android:text="  > >  " />
 
             <TextView
-                android:id="@+id/tv_driverA"
+                android:id="@+id/stv_driverA"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="轮毂"
+                android:text="请选择驾驶员A"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="#ffff0000" />
+                android:textColor="#ff0000ff" />
         </TableRow>
 
         <TableRow
@@ -152,13 +151,14 @@
                 android:layout_height="wrap_content"
                 android:text="  > >  " />
 
-            <EditText
-                android:id="@+id/edDriverB"
-                android:layout_width="100dp"
-                android:layout_height="40dp"
-                android:ems="10"
-                android:inputType="text"
-                android:textSize="20sp" />
+            <TextView
+                android:id="@+id/stv_DriverB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="请选择驾驶员B"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#ff0000ff" />
+
         </TableRow>
 
         <TableRow
@@ -184,13 +184,14 @@
                 android:layout_height="wrap_content"
                 android:text="  > >  " />
 
-            <EditText
-                android:id="@+id/edyyy"
-                android:layout_width="100dp"
-                android:layout_height="40dp"
-                android:ems="10"
-                android:inputType="text"
-                android:textSize="20sp" />
+            <TextView
+                android:id="@+id/stv_yyy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="请选择押运员"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#ff0000ff" />
+
         </TableRow>
 
         <TableRow

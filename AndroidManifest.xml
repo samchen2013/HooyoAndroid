@@ -74,6 +74,16 @@
             android:name=".ShowPictrueActivity"
             android:label="@string/title_activity_show_pictrue" >
         </activity>
+        <activity
+            android:name=".GetDriverActivity"
+            android:label="@string/title_activity_get_driver"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name=".GetCarActivity"
+            android:label="@string/title_activity_get_car" 
+            android:windowSoftInputMode="adjustPan">
+        </activity>
     </application>
 
 </manifest>

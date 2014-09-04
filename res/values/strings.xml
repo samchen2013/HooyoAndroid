@@ -25,5 +25,7 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="title_activity_show_pictrue">图片详情</string>
+    <string name="title_activity_get_driver">GetDriverActivity</string>
+    <string name="title_activity_get_car">选择车辆</string>
 
 </resources>

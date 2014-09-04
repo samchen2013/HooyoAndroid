@@ -37,6 +37,7 @@ public class LJListViewActivity extends Activity implements IXListViewListener {
 	private static int refreshCnt = 0;
 	private String gfmc,hwmc,ton;
 	private List<GYS> gyss;
+	private String xmbId;
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -45,8 +46,8 @@ public class LJListViewActivity extends Activity implements IXListViewListener {
 		Bundle bundle=this.getIntent().getExtras();
 		String xmbName=bundle.getString("XMBNAME");
 		this.setTitle(xmbName);
-		String xmbId=bundle.getString("XMBID");
-		geneItems("57");
+		xmbId=bundle.getString("XMBID");
+		geneItems(xmbId);
 		mListView = (LJListView) findViewById(R.id.xListView);
 		mAdapter = new ArrayAdapter<String>(this, R.layout.list_item, items);
 		mListView.setAdapter(mAdapter);
@@ -115,7 +116,7 @@ public class LJListViewActivity extends Activity implements IXListViewListener {
 			public void run() {
 				start = ++refreshCnt;
 				items.clear();
-				geneItems("57");
+				geneItems(xmbId);
 				// mAdapter.notifyDataSetChanged();
 				mAdapter = new ArrayAdapter<String>(LJListViewActivity.this, R.layout.list_item, items);
 				mListView.setAdapter(mAdapter);
@@ -129,7 +130,7 @@ public class LJListViewActivity extends Activity implements IXListViewListener {
 		mHandler.postDelayed(new Runnable() {
 			@Override
 			public void run() {
-				geneItems("57");
+				geneItems(xmbId);
 				mAdapter.notifyDataSetChanged();
 				onLoad();
 			}

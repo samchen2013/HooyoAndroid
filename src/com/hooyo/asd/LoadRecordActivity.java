@@ -247,20 +247,20 @@ public class LoadRecordActivity extends Activity {
     @Override
  	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
-		if (requestCode == CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE1) {// 第一张图片
-			if (resultCode == RESULT_OK) {
-				Log.e(tag, "获取图片成功，path=" + picFileFullName + "picpath0:"
-						+ picPaths[0]);
-				toast("获取图片成功，path=" + picFileFullName);
-				setImageView(ImV_pic1, picPaths[0]);
-			} else if (resultCode == RESULT_CANCELED) {
-				// 用户取消了图像捕获
-			} else {
-				// 图像捕获失败，提示用户
-				toast("拍照失败!");
-				Log.e(tag, "拍照失败");
-			}
-		}
+//		if (requestCode == CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE1) {// 第一张图片
+//			if (resultCode == RESULT_OK) {
+//				Log.e(tag, "获取图片成功，path=" + picFileFullName + "picpath0:"
+//						+ picPaths[0]);
+//				toast("获取图片成功，path=" + picFileFullName);
+//				setImageView(ImV_pic1, picPaths[0]);
+//			} else if (resultCode == RESULT_CANCELED) {
+//				// 用户取消了图像捕获
+//			} else {
+//				// 图像捕获失败，提示用户
+//				toast("拍照失败!");
+//				Log.e(tag, "拍照失败");
+//			}
+//		}
 
 		switch (requestCode) {
 		case CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE1: {
