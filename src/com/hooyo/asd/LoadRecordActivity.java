@@ -20,6 +20,7 @@ import android.media.ExifInterface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.provider.MediaStore;
@@ -57,6 +58,28 @@ public class LoadRecordActivity extends Activity {
 	private ProgressDialog proDialog;
 	private TextView tv_saveimagesMsg;
 	
+	/** 登录后台通知更新UI线程,主要用于登录失败,通知UI线程更新界面 */
+	Handler saveHandler = new Handler() {
+		public void handleMessage(Message msg) {
+			String outmsg = msg.getData().getString("msgreturn");
+			if (proDialog != null) {
+				proDialog.dismiss();
+			}
+			toast(outmsg);
+//			if (isNetError) {
+//				Toast.makeText(Login.this, "登陆失败:\n1.请检查您网络连接.\n2.请联系我们.!",
+//						Toast.LENGTH_SHORT).show();
+//			}
+//			// 
+//			else {
+//				Toast.makeText(Login.this, "登陆失败,请输入正确的用户名和密码!",
+//						Toast.LENGTH_SHORT).show();
+//				//  // 清除以前的SharePreferences密码
+//				clearSharePassword();
+//			}
+		}
+	};
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -72,12 +95,12 @@ public class LoadRecordActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				
-				saveAllPictrues();
-//				proDialog = ProgressDialog.show(LoadRecordActivity.this, "保存信息和图片.",
-//						"上传中...", true, true);
-//				// 开一个线程进行登录验证,主要是用于失败,成功可以直接通过startAcitivity(Intent)转向
-//				Thread saveThread = new Thread(new SaveZYFailureHandler());
-//				saveThread.start();
+//				saveAllPictrues();
+				proDialog = ProgressDialog.show(LoadRecordActivity.this, "保存信息和图片.",
+						"上传中...", true, true);
+				// 开一个线程进行登录验证,主要是用于失败,成功可以直接通过startAcitivity(Intent)转向
+				Thread saveThread = new Thread(new SaveZYFailureHandler());
+				saveThread.start();
 			}
 		});
 		//单击事件
@@ -220,15 +243,22 @@ public class LoadRecordActivity extends Activity {
 	            params.put("image3", images64CodeString[2]);
 	            params.put("image4", images64CodeString[3]);
 				String State=WebServiceHelper.connectWebService("ModifyCarZYInfo",params);				 
-				tv_saveimagesMsg.setText(State);
-				proDialog.dismiss();
-				toast(State);
+//				tv_saveimagesMsg.setText(State);
+//				proDialog.dismiss();
+//				toast(State);
+				Message message = new Message();
+				Bundle bundle = new Bundle();
+				bundle.putString("msgreturn", State);
+				message.setData(bundle);
+				saveHandler.sendMessage(message);
 		}
 		catch(Exception e)
 		{
-			tv_saveimagesMsg.setText(e.toString());
-			proDialog.dismiss();
-			toast(e.toString());
+			Message message = new Message();
+			Bundle bundle = new Bundle();
+			bundle.putString("msgreturn", e.toString());
+			message.setData(bundle);
+			saveHandler.sendMessage(message);
 		}
 	}
 
