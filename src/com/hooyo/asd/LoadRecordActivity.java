@@ -66,6 +66,7 @@ public class LoadRecordActivity extends Activity {
 				proDialog.dismiss();
 			}
 			toast(outmsg);
+			Log.e(tag, outmsg);
 //			if (isNetError) {
 //				Toast.makeText(Login.this, "登陆失败:\n1.请检查您网络连接.\n2.请联系我们.!",
 //						Toast.LENGTH_SHORT).show();
@@ -212,14 +213,14 @@ public class LoadRecordActivity extends Activity {
 			toast("请输入件数！");
 			return;
 		}
-		if(picPaths[0].equals("")
-	       &&picPaths[1].equals("")
-	       &&picPaths[2].equals("")
-	       &&picPaths[3].equals(""))
-		{
-			toast("请至少拍摄一张照片！");
-			return;
-		}
+//		if(picPaths[0].equals("")
+//	       &&picPaths[1].equals("")
+//	       &&picPaths[2].equals("")
+//	       &&picPaths[3].equals(""))
+//		{
+//			toast("请至少拍摄一张照片！");
+//			return;
+//		}
 		//开始上传
 		 
 		//resizePic();
@@ -251,6 +252,7 @@ public class LoadRecordActivity extends Activity {
 				bundle.putString("msgreturn", State);
 				message.setData(bundle);
 				saveHandler.sendMessage(message);
+				
 		}
 		catch(Exception e)
 		{
